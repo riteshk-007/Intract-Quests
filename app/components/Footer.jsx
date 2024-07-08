@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="bg-black text-white py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
-          <div className="col-span-1 sm:col-span-2 lg:col-span-1">
+          <div className="col-span-2 lg:col-span-1">
             <h2 className="text-2xl font-bold mb-4">intract.</h2>
             <p className="text-gray-400 text-sm">
               We are your personal guide for exploring web3 projects & earning
@@ -14,12 +14,12 @@ const Footer = () => {
             </p>
           </div>
           <div>
-            <h3 className="font-bold mb-4 text-lg">INTRACT</h3>
+            <h3 className="font-bold mb-4 md:text-lg">INTRACT</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-400 hover:text-white text-xs md:text-sm"
                 >
                   Explore Quests
                 </a>
@@ -27,7 +27,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-400 hover:text-white text-xs md:text-sm"
                 >
                   Communities
                 </a>
@@ -35,7 +35,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-400 hover:text-white text-xs md:text-sm"
                 >
                   Alpha Hub
                 </a>
@@ -43,12 +43,12 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h3 className="font-bold mb-4 text-lg">EARN</h3>
+            <h3 className="font-bold mb-4 md:text-lg">EARN</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-400 hover:text-white text-xs md:text-sm"
                 >
                   Refer & Earn
                 </a>
@@ -56,7 +56,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-400 hover:text-white text-xs md:text-sm"
                 >
                   Leaderboard
                 </a>
@@ -64,7 +64,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-400 hover:text-white text-xs md:text-sm"
                 >
                   Achievements
                 </a>
@@ -72,12 +72,12 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h3 className="font-bold mb-4 text-lg">ABOUT</h3>
+            <h3 className="font-bold mb-4 md:text-lg">ABOUT</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-400 hover:text-white text-xs md:text-sm"
                 >
                   Product Roadmap
                 </a>
@@ -85,7 +85,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-400 hover:text-white text-xs md:text-sm"
                 >
                   Affiliate Program
                 </a>
@@ -93,7 +93,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-400 hover:text-white text-xs md:text-sm"
                 >
                   Sign up Program
                 </a>
@@ -101,7 +101,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-400 hover:text-white text-xs md:text-sm"
                 >
                   Growth Community
                 </a>
@@ -109,7 +109,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-400 hover:text-white text-xs md:text-sm"
                 >
                   Blogs
                 </a>
@@ -117,12 +117,12 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h3 className="font-bold mb-4 text-lg">SUPPORT</h3>
+            <h3 className="font-bold mb-4 md:text-lg">SUPPORT</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-400 hover:text-white text-xs md:text-sm"
                 >
                   Help Center
                 </a>
@@ -130,7 +130,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-400 hover:text-white text-xs md:text-sm"
                 >
                   Create your quest
                 </a>
@@ -138,7 +138,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-400 hover:text-white text-xs md:text-sm"
                 >
                   Terms of Service
                 </a>
@@ -146,7 +146,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-400 hover:text-white text-xs md:text-sm"
                 >
                   Privacy Policy
                 </a>
@@ -154,7 +154,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-400 hover:text-white text-xs md:text-sm"
                 >
                   Community Guidelines
                 </a>
@@ -185,19 +185,19 @@ const Footer = () => {
           <div className="flex space-x-4">
             <a
               href="#"
-              className="bg-gray-700 p-2 text-blue-500 rounded-md hover:text-white transition-colors"
+              className="bg-gray-700 p-2 text-blue-500 rounded-md hover:text-white text-xs md:text-sm"
             >
               <Twitter size={20} />
             </a>
             <a
               href="#"
-              className="bg-gray-700 text-blue-500 p-2 rounded-md hover:text-white transition-colors"
+              className="bg-gray-700 text-blue-500 p-2 rounded-md hover:text-white text-xs md:text-sm"
             >
               <Send size={20} />
             </a>
             <a
               href="#"
-              className="bg-gray-700 text-blue-500 p-2 rounded-md hover:text-white transition-colors"
+              className="bg-gray-700 text-blue-500 p-2 rounded-md hover:text-white text-xs md:text-sm"
             >
               <Music size={20} />
             </a>
