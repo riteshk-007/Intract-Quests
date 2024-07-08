@@ -4,6 +4,7 @@ import { BookOpen, PlayIcon, XCircle } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 import Tabs from "./Tabs";
+import Road from "./Road";
 
 const Creators = () => {
   const [activeVideo, setActiveVideo] = useState(null);
@@ -23,6 +24,7 @@ const Creators = () => {
 
   return (
     <>
+      <Road />
       <div className="border-t border-b border-gray-700">
         {/* first */}
         <div className="flex w-full items-center justify-center flex-col p-5 mt-5  relative">
