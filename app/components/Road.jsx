@@ -1,5 +1,5 @@
 "use client";
-import { ChevronDown } from "lucide-react";
+import { Check, ChevronDown } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 
@@ -73,18 +73,19 @@ const Road = () => {
                       <div className="text-sm text-muted-foreground text-gray-400">
                         {card.task}
                       </div>
+                      <hr className="border-b border-dashed border-[#3a3a3a] mt-2 mb-5" />
                       <div className="mt-2">
-                        <div className="w-full bg-muted h-2 rounded-full">
+                        <div className="w-full flex items-center justify-center h-2 rounded-full gap-2">
                           <div
                             className="bg-[#1f1e1f] h-3 rounded-full border-2 border-[#545252]"
                             style={{ width: "100%" }}
                           ></div>
+                          <button className=" flex items-center justify-center p-1 border border-[#4f4e4e] bg-[#383838] rounded-full text-[#545454] ">
+                            <Check className="h-4 w-4" />
+                          </button>
                         </div>
                       </div>
                     </div>
-                    <button className="absolute top-10 right-4 flex items-center justify-center w-6 h-6 bg-secondary rounded-full text-secondary-foreground">
-                      ✔️
-                    </button>
                   </div>
                 ))}
               </div>
