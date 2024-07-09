@@ -15,6 +15,7 @@ import Tabs from "./Tabs";
 import DropCard from "./DropCard";
 import SmallCards from "./SmallCards";
 import PopularNarratives from "./PopularNarratives";
+import Alpha from "./Alpha";
 
 const Creators = () => {
   const [activeVideo, setActiveVideo] = useState(null);
@@ -250,71 +251,76 @@ const Creators = () => {
             </div>
           </div>
         ) : (
-          <div className="w-full flex flex-col items-center border-t border-b  border-[#252525] justify-center bg-gradient-to-b from-black to-[#0e0d0e] p-5 relative">
-            <PopularNarratives />
-            <div className="w-64 mt-5">
-              <button className="bg-gray-800 text-gray-300 py-2 px-4 rounded-md hover:bg-gray-700 transition-colors duration-300 w-full text-center">
-                See More
-              </button>
-            </div>
-            <div className="w-full lg:w-4/5 flex flex-col items-center justify-center">
-              {/* Narratives header */}
-              <div className="w-full flex justify-between items-center my-4">
-                <span className="text-xl text-[#d6d5d5] font-semibold">
-                  Recommended Narratives
-                </span>
-                <div className="flex gap-1 text-sm items-center justify-center cursor-pointer text-[#727272] font-semibold">
-                  <h1>See all</h1>
-                  <ChevronRight size={17} />
-                </div>
+          <>
+            <Alpha />
+            <div className="w-full flex flex-col items-center border-t border-b  border-[#252525] justify-center bg-gradient-to-b from-black to-[#0e0d0e] p-5 relative">
+              <PopularNarratives />
+              <div className="w-64 mt-5">
+                <button className="bg-gray-800 text-gray-300 py-2 px-4 rounded-md hover:bg-gray-700 transition-colors duration-300 w-full text-center">
+                  See More
+                </button>
               </div>
-              {/* cards */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {NarrativesCard.map((card, index) => (
-                  <div
-                    key={index}
-                    className="bg-[#151415]/50 cursor-pointer backdrop-blur-md w-full shadow-lg mx-auto transition-all duration-200 hover:bg-[#1d1b1d] rounded-3xl relative flex flex-col"
-                  >
-                    <div className="p-4 rounded-lg flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4 w-full">
-                      <div className="w-full sm:w-1/3">
-                        <div className="bg-[#101010] p-2 border-[#151415] shadow rounded-lg relative">
-                          <Image
-                            width={200}
-                            height={200}
-                            src={card.img}
-                            alt="crypto-icon"
-                            className="rounded-lg object-cover w-full h-max"
-                          />
-                          <div className="absolute bottom-2 left-0 right-0 bg-black/70 rounded-full w-min mx-auto text-nowrap text-center py-2 px-3 text-xs font-semibold">
-                            {card.quests} Quests
+              <div className="w-full lg:w-4/5 flex flex-col items-center justify-center">
+                {/* Narratives header */}
+                <div className="w-full flex justify-between items-center my-4">
+                  <span className="text-xl text-[#d6d5d5] font-semibold">
+                    Recommended Narratives
+                  </span>
+                  <div className="flex gap-1 text-sm items-center justify-center cursor-pointer text-[#727272] font-semibold">
+                    <h1>See all</h1>
+                    <ChevronRight size={17} />
+                  </div>
+                </div>
+                {/* cards */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {NarrativesCard.map((card, index) => (
+                    <div
+                      key={index}
+                      className="bg-[#151415]/50 cursor-pointer backdrop-blur-md w-full shadow-lg mx-auto transition-all duration-200 hover:bg-[#1d1b1d] rounded-3xl relative flex flex-col"
+                    >
+                      <div className="p-4 rounded-lg flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4 w-full">
+                        <div className="w-full sm:w-1/3">
+                          <div className="bg-[#101010] p-2 border-[#151415] shadow rounded-lg relative">
+                            <Image
+                              width={200}
+                              height={200}
+                              src={card.img}
+                              alt="crypto-icon"
+                              className="rounded-lg object-cover w-full h-max"
+                            />
+                            <div className="absolute bottom-2 left-0 right-0 bg-black/70 rounded-full w-min mx-auto text-nowrap text-center py-2 px-3 text-xs font-semibold">
+                              {card.quests} Quests
+                            </div>
+                          </div>
+                        </div>
+                        <div className="sm:w-2/3 space-y-2">
+                          <h2 className="text-lg font-semibold">
+                            {card.title}
+                          </h2>
+                          <p className="text-sm font-semibold text-gray-600 line-clamp-3">
+                            {card.desc}
+                          </p>
+                          <hr className="border-b border-dashed border-[#3a3a3a] my-2" />
+                          <div className="flex items-center space-x-2">
+                            <span className="py-1 bg-[#1e1d1e] px-2 rounded-full shadow-lg border-[#171717] border flex items-center gap-2 justify-center">
+                              <Image
+                                width={20}
+                                height={20}
+                                src="https://www.intract.io/assets/xp-icon-aacd204a.svg"
+                                alt="coin-icon"
+                                className="inline-block h-5 w-5"
+                              />
+                              <span className="text-sm">{`${card.xps} XPs`}</span>
+                            </span>
                           </div>
                         </div>
                       </div>
-                      <div className="sm:w-2/3 space-y-2">
-                        <h2 className="text-lg font-semibold">{card.title}</h2>
-                        <p className="text-sm font-semibold text-gray-600 line-clamp-3">
-                          {card.desc}
-                        </p>
-                        <hr className="border-b border-dashed border-[#3a3a3a] my-2" />
-                        <div className="flex items-center space-x-2">
-                          <span className="py-1 bg-[#1e1d1e] px-2 rounded-full shadow-lg border-[#171717] border flex items-center gap-2 justify-center">
-                            <Image
-                              width={20}
-                              height={20}
-                              src="https://www.intract.io/assets/xp-icon-aacd204a.svg"
-                              alt="coin-icon"
-                              className="inline-block h-5 w-5"
-                            />
-                            <span className="text-sm">{`${card.xps} XPs`}</span>
-                          </span>
-                        </div>
-                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
+          </>
         )}
 
         {/* first */}
