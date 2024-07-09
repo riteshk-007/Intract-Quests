@@ -27,7 +27,7 @@ const Card = ({ img, title, color }) => {
     <div
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
-      className="bg-[#1e1e1e] rounded-xl overflow-hidden w-64 shadow-lg hover:shadow-2xl transition duration-300 ease-in-out hover:bg-[#222222]"
+      className="bg-[#1e1e1e] rounded-xl overflow-hidden min-w-64 max-w-64 shadow-lg hover:shadow-2xl transition duration-300 ease-in-out hover:bg-[#222222]"
     >
       <div className="relative p-3">
         <div className={`${color} p-4 relative rounded-lg overflow-hidden `}>
@@ -36,11 +36,11 @@ const Card = ({ img, title, color }) => {
               <div key={i} className={`${color} bg-opacity-20`}></div>
             ))}
           </div>
-          <div className="relative z-10 p-5">
+          <div className="relative p-5">
             <div className="bg-gray-800 rounded-lg overflow-hidden">
               <Image
                 src={img}
-                alt="Intro to the GetGrass"
+                alt={title}
                 width={150}
                 height={100}
                 layout="responsive"

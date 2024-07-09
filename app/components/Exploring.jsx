@@ -2,9 +2,9 @@ import Image from "next/image";
 import React from "react";
 import Card from "./Card";
 
-const Exploring = ({ head, pera }) => {
+const Exploring = ({ head, pera, Quests, xps, cards }) => {
   return (
-    <div className="bg-[#1c1c1c] text-white  rounded-xl shadow-lg md:max-w-6xl mx-auto">
+    <div className="bg-[#1c1c1c] text-white  rounded-xl shadow-lg w-full md:max-w-6xl mx-auto">
       <div className="flex flex-col md:flex-row gap-6">
         {/* Left side content */}
         <div className="flex-1 space-y-4 p-6 hover:bg-[#232323]">
@@ -12,7 +12,7 @@ const Exploring = ({ head, pera }) => {
           <p className="text-gray-400 text-sm line-clamp-4">{pera}</p>
           <div className="flex items-center gap-2">
             <span className="bg-gray-800 text-sm px-3 py-1 rounded-full">
-              1 Quests
+              {Quests} Quests
             </span>
             <div className="flex -space-x-2">
               <div className="flex items-center -space-x-4">
@@ -57,7 +57,7 @@ const Exploring = ({ head, pera }) => {
           <hr className="border-gray-600 w-full border-dashed" />
           <div className="bg-gray-800 text-sm px-3 py-1 rounded-full w-fit flex items-center gap-2">
             <span className="w-4 h-4 bg-yellow-500 rounded-full"></span>
-            40 XPs
+            {xps} XPs
           </div>
           <button className="w-full bg-[#6435e9] hover:bg-[#6535e9f7] text-white font-bold py-2 px-4 rounded-md transition duration-300">
             Start here →
@@ -65,14 +65,15 @@ const Exploring = ({ head, pera }) => {
         </div>
 
         {/* Right side content */}
-        <div className="md:w-[60%]  overflow-hidden overflow-x-auto rounded bg-[#161616] flex  items-center gap-4 p-4">
-          <Card
-            img={
-              "https://static.highongrowth.xyz/enterprise/65017d014e5f24613adbfd67/b635538e4f7c4d0cb80926f8c2028562.png"
-            }
-            title={"Introduction To Grass"}
-            color={"bg-green-500"}
-          />
+        <div className="md:w-[60%]  overflow-hidden overflow-x-auto rounded bg-[#161616] flex  items-center gap-4 p-4 hide-scroll">
+          {cards.map((card, inx) => (
+            <Card
+              key={inx}
+              img={card.img}
+              title={card.title}
+              color={card.color}
+            />
+          ))}
         </div>
       </div>
     </div>

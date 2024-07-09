@@ -31,3 +31,17 @@ body {
     text-wrap: balance;
   }
 }
+
+.hide-scroll::-webkit-scrollbar {
+  width: 12px;
+}
+
+.hide-scroll::-webkit-scrollbar-track {
+  background: var(--background-start-rgb);
+}
+
+.hide-scroll::-webkit-scrollbar-thumb {
+  background-color: var(--foreground-rgb);
+  border-radius: 6px;
+  border: 3px solid var(--background-start-rgb);
+}
