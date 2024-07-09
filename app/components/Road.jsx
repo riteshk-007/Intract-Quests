@@ -1,65 +1,61 @@
-import { Check, LockKeyhole } from "lucide-react";
-import Image from "next/image";
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import DropCard from "./DropCard";
+import SmallCards from "./SmallCards";
 
 const Road = () => {
+  const [clickStates, setClickStates] = useState({
+    first: true,
+    second: true,
+  });
+
+  const handleClickState = (key) => {
+    setClickStates((prevStates) => ({
+      ...prevStates,
+      [key]: !prevStates[key],
+    }));
+  };
+
   return (
-    <div className="w-full  flex flex-col items-center justify-center bg-gradient-to-b from-black to-[#151415] p-5 ">
-      {/* 1 block */}
+    <div className="w-full flex flex-col items-center justify-center bg-gradient-to-b from-black to-[#151415] p-5 relative">
+      {/* 1st block */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
         {/* 1st card */}
         <DropCard
           imgSrc="https://static.highongrowth.xyz/enterprise/65017d014e5f24613adbfd67/2d1ac16ea7c9416d94a74f2ba2fe8d4a.png"
           Quests="6"
           title="Basics of Crypto"
-          desc=" The safest and easiest place to start your crypto journey!"
-          XPs=" 1490"
+          desc="The safest and easiest place to start your crypto journey!"
+          XPs="1490"
           cards={cards}
+          isOpen={clickStates.first}
+          onToggle={() => handleClickState("first")}
         />
         {/* 2nd card */}
-        <div className="w-full h-full  flex items-center justify-center sm:pl-52 pt-40">
-          <div className="relative flex items-center flex-col justify-center">
-            <span className="bg-[#1e1d1e] p-1 my-4 rounded-full shadow-lg border-[#333333] border backdrop-blur-md">
-              <Check className="h-10 w-10 text-[#323132]" />
-            </span>
-            <div className="relative bg-[#1e1d1e] p-1 my-4 rounded-2xl">
-              <Image
-                src={
-                  "https://static.highongrowth.xyz/erc1155-images/65017d014e5f24613adbfd67/1b1912563b964393b0478949efad5ed3.png"
-                }
-                width={150}
-                height={100}
-                alt="intract-certified"
-                className=" rounded-2xl"
-              />
-              <span className="absolute -bottom-4 -right-3 bg-[#1e1d1e] p-3 rounded-full shadow-lg border-[#333333] border backdrop-blur-md">
-                <LockKeyhole className="h-5 w-5 text-[#5f5f5f]" />
-              </span>
-            </div>
-            <div className="flex flex-col">
-              <h1 className="text-lg font-semibold text-gray-400 text-center">
-                Intract Certified: Learner NFT
-              </h1>
-              <p className="text-sm flex-wrap text-gray-600 font-semibold">
-                Your crypto black-belt <br /> certificate
-              </p>
-              <button className="bg-[#1e1d1e] text-gray-400 font-semibold py-2 px-4 rounded-lg my-4  cursor-not-allowed  shadow-lg border border-[#262626] ">
-                Claim
-              </button>
-            </div>
-          </div>
+        <div className="w-full h-full flex items-center justify-center sm:pl-52 pt-40">
+          <SmallCards
+            imgsrc="https://static.highongrowth.xyz/erc1155-images/65017d014e5f24613adbfd67/1b1912563b964393b0478949efad5ed3.png"
+            desc="Your crypto black-belt certificate"
+          />
         </div>
       </div>
-      {/* 2 block */}
+      {/* 2nd block */}
       <div className="w-full items-center justify-center my-10 md:pr-10">
         <DropCard
           imgSrc="https://static.highongrowth.xyz/enterprise/65017d014e5f24613adbfd67/85903745c34d42d684a2dc505768afa7.png"
           Quests="4"
           title="Introduction to Airdrops"
-          desc=" Your best bet to make it big in crypto!"
-          XPs=" 1040"
+          desc="Your best bet to make it big in crypto!"
+          XPs="1040"
           cards={cards2}
+          isOpen={clickStates.second}
+          onToggle={() => handleClickState("second")}
+        />
+      </div>
+      <div className="w-auto flex items-start justify-start absolute -bottom-10 left-0">
+        <SmallCards
+          imgsrc="https://static.highongrowth.xyz/erc1155-images/65017d014e5f24613adbfd67/83bd377d91ff441aa6f7c46a63c88506.png"
+          desc="Your proof of airdrop expertise"
         />
       </div>
     </div>
@@ -100,10 +96,11 @@ const cards = [
     task: "8 Tasks",
   },
 ];
+
 const cards2 = [
   {
     img: "https://static.highongrowth.xyz/enterprise/65017d014e5f24613adbfd67/6bb30883bc5042809b9d20926341f8ac.jpg",
-    title: " #1: What are airdrops?",
+    title: "#1: What are airdrops?",
     task: "7 Tasks",
   },
   {
