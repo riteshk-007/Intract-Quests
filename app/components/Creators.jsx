@@ -1,8 +1,8 @@
 "use client";
-
 import {
   BookOpen,
   Check,
+  ChevronRight,
   Clock,
   Info,
   MoveRight,
@@ -89,7 +89,7 @@ const Creators = () => {
     <>
       <div className="border-t border-b border-gray-700">
         {/* A1 */}
-        {hub ? (
+        {!hub ? (
           <div className="w-full flex flex-col items-center justify-center bg-gradient-to-b from-black to-[#0e0d0e] p-5 relative">
             {/* 1st block */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
@@ -250,7 +250,63 @@ const Creators = () => {
           </div>
         ) : (
           <div className="w-full flex flex-col items-center justify-center bg-gradient-to-b from-black to-[#0e0d0e] p-5 relative">
-            hello world
+            <div className="w-full lg:w-4/5 flex flex-col items-center justify-center">
+              {/* Narratives header */}
+              <div className="w-full flex justify-between items-center my-4">
+                <span className="text-xl text-[#d6d5d5] font-semibold">
+                  Recommended Narratives
+                </span>
+                <div className="flex gap-1 text-sm items-center justify-center cursor-pointer text-[#727272] font-semibold">
+                  <h1>See all</h1>
+                  <ChevronRight size={17} />
+                </div>
+              </div>
+              {/* cards */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {NarrativesCard.map((card, index) => (
+                  <div
+                    key={index}
+                    className="bg-[#151415]/50 cursor-pointer backdrop-blur-md w-full shadow-lg mx-auto transition-all duration-200 hover:bg-[#1d1b1d] rounded-3xl relative flex flex-col"
+                  >
+                    <div className="p-4 rounded-lg flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4 w-full">
+                      <div className="w-full sm:w-1/3">
+                        <div className="bg-[#101010] p-2 border-[#151415] shadow rounded-lg relative">
+                          <Image
+                            width={200}
+                            height={200}
+                            src={card.img}
+                            alt="crypto-icon"
+                            className="rounded-lg object-cover w-full h-max"
+                          />
+                          <div className="absolute bottom-2 left-0 right-0 bg-black/70 rounded-full w-min mx-auto text-nowrap text-center py-2 px-3 text-xs font-semibold">
+                            {card.quests} Quests
+                          </div>
+                        </div>
+                      </div>
+                      <div className="sm:w-2/3 space-y-2">
+                        <h2 className="text-lg font-semibold">{card.title}</h2>
+                        <p className="text-sm font-semibold text-gray-600 line-clamp-3">
+                          {card.desc}
+                        </p>
+                        <hr className="border-b border-dashed border-[#3a3a3a] my-2" />
+                        <div className="flex items-center space-x-2">
+                          <span className="py-1 bg-[#1e1d1e] px-2 rounded-full shadow-lg border-[#171717] border flex items-center gap-2 justify-center">
+                            <Image
+                              width={20}
+                              height={20}
+                              src="https://www.intract.io/assets/xp-icon-aacd204a.svg"
+                              alt="coin-icon"
+                              className="inline-block h-5 w-5"
+                            />
+                            <span className="text-sm">{`${card.xps} XPs`}</span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         )}
 
@@ -433,5 +489,50 @@ const cards2 = [
     img: "https://static.highongrowth.xyz/enterprise/65017d014e5f24613adbfd67/27d77aa021174529a9eae082de8196c9.jpg",
     title: "#4: Things to keep in mind!",
     task: "7 Tasks",
+  },
+];
+
+const NarrativesCard = [
+  {
+    img: "https://static.highongrowth.xyz/enterprise/enterpriseId/ad662db14acc46d5a6cb1dc0fb0cb93e.png",
+    quests: 5,
+    title: "Exploring Scroll",
+    desc: "Scroll seamlessly extends Ethereum’s capabilities through zero knowledge tech and EVM compatibility. The L2 network built by Ethereum devs for Ethereum devs.",
+    xps: 390,
+  },
+  {
+    img: "https://intract-dashboard-files.s3.amazonaws.com/enterprise/641d73fb135bf4a73d7c1c83/34bfdb0c7bb84b20a3f6432a828016a3.png",
+    quests: 3,
+    title: "Exploring BASE",
+    desc: "Base is a secure, low-cost, builder-friendly Ethereum L2 built to bring the next billion users onchain.",
+    xps: 170,
+  },
+  {
+    img: "https://static.highongrowth.xyz/enterprise/enterpriseId/ff9898828d0f4b23b292521d702f23a6.jpg",
+    quests: 4,
+    title: "Exploring SocialFi Drops",
+    desc: "Explore SocialFi drops. SocialFi drops fuse finance with social media, empowering creators",
+    xps: 380,
+  },
+  {
+    img: "https://static.highongrowth.xyz/enterprise/enterpriseId/ffa3e75f9a7a486e9214a5d3de6b1c44.png",
+    quests: 2,
+    title: "Get onboarded on Bitcoin",
+    desc: "Bitcoin: the first decentralized digital currency, enabling direct transactions on a peer-to-peer network without central authority, powered by blockchain technology for secure, transparent, and immutable exchanges. 🌍💼🔒",
+    xps: 180,
+  },
+  {
+    img: "https://storage.googleapis.com/intract-test-storage/enterprise/undefined/daf0c5dac69547eda904c4b0744a6df2.png",
+    quests: 4,
+    title: "Trending",
+    desc: "Explore the Latest Trends: Discover Projects on the Verge of Mainnet Launch or with Exciting Airdrop Opportunities.",
+    xps: 280,
+  },
+  {
+    img: "https://static.highongrowth.xyz/enterprise/enterpriseId/fed46d7bf36741edb0bcb4f101266bb1.png",
+    quests: 5,
+    title: "EExploring Solana",
+    desc: "Solana: A blazing-fast blockchain with speeds up to 65,000 transactions per second, surpassing Bitcoin and Ethereum. Low transaction fees and minimal energy consumption make it cost-effective and sustainable. Explore Solana’s ecosystem for cutting-edge development! 🚀💡🔗",
+    xps: 480,
   },
 ];
