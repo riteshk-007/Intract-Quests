@@ -88,7 +88,7 @@ const Creators = () => {
     <>
       <div className="border-t border-b border-gray-700">
         {/* A1 */}
-        <div className="w-full flex flex-col items-center justify-center bg-gradient-to-b from-black to-[#151415] p-5 relative">
+        <div className="w-full flex flex-col items-center justify-center bg-gradient-to-b from-black to-[#0e0d0e] p-5 relative">
           {/* 1st block */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
             {/* 1st card */}
