@@ -111,25 +111,30 @@ const Creators = () => {
             </div>
           </div>
           {/* 2nd block */}
-          <div className="w-full items-center justify-center my-10 md:pr-10">
-            <DropCard
-              imgSrc="https://static.highongrowth.xyz/enterprise/65017d014e5f24613adbfd67/85903745c34d42d684a2dc505768afa7.png"
-              Quests="4"
-              title="Introduction to Airdrops"
-              desc="Your best bet to make it big in crypto!"
-              XPs="1040"
-              cards={cards2}
-              isOpen={clickStates.second}
-              onToggle={() => handleClickState("second")}
-            />
+          <div className="grid  grid-cols-1 md:grid-cols-3 w-full md:mt-10">
+            <div className="col-span-1  flex items-end ">
+              <SmallCards
+                imgsrc="https://static.highongrowth.xyz/erc1155-images/65017d014e5f24613adbfd67/83bd377d91ff441aa6f7c46a63c88506.png"
+                desc="Your proof of airdrop expertise"
+              />
+            </div>
+            <div className="col-span-1 md:col-span-2">
+              <div className="w-full items-center justify-center  md:p-5  md:pr-20">
+                <DropCard
+                  imgSrc="https://static.highongrowth.xyz/enterprise/65017d014e5f24613adbfd67/85903745c34d42d684a2dc505768afa7.png"
+                  Quests="4"
+                  title="Introduction to Airdrops"
+                  desc="Your best bet to make it big in crypto!"
+                  XPs="1040"
+                  cards={cards2}
+                  isOpen={clickStates.second}
+                  onToggle={() => handleClickState("second")}
+                />
+              </div>
+            </div>
           </div>
-          <div className="w-full flex items-start justify-start ">
-            <SmallCards
-              imgsrc="https://static.highongrowth.xyz/erc1155-images/65017d014e5f24613adbfd67/83bd377d91ff441aa6f7c46a63c88506.png"
-              desc="Your proof of airdrop expertise"
-            />
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 w-full">
+          {/* rewardws timer */}
+          <div className="grid grid-cols-1 md:grid-cols-3 w-full md:mt-10">
             <div className="col-span-2  p-2 flex items-end md:pr-20 justify-end flex-col gap-4">
               {/* countdown */}
               <div className="bg-[#151415]/70 backdrop-blur-md flex flex-col p-3 w-full md:w-72 rounded-md shadow-lg">
