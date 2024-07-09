@@ -8,7 +8,7 @@ const Exploring = ({ head, pera, Quests, xps, cards }) => {
       <div className="flex flex-col md:flex-row gap-6">
         {/* Left side content */}
         <div className="flex-1 space-y-4 p-6 hover:bg-[#232323]">
-          <h2 className="text-3xl font-bold">{head}</h2>
+          <h2 className="text-3xl font-bold ">{head}</h2>
           <p className="text-gray-400 text-sm line-clamp-4">{pera}</p>
           <div className="flex items-center gap-2">
             <span className="bg-gray-800 text-sm px-3 py-1 rounded-full">

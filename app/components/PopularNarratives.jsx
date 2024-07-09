@@ -2,7 +2,10 @@ import Exploring from "./Exploring";
 
 const PopularNarratives = () => {
   return (
-    <div className="flex items-center justify-center flex-col gap-5 w-full">
+    <div className="flex items-center justify-center flex-col gap-5 w-full ">
+      <h1 className="md:w-4/5 w-full flex text-2xl text-[#d6d5d5] font-semibold px-4 ">
+        Popular Narratives
+      </h1>
       <Exploring
         head={"Exploring Lens Protocol"}
         pera={
@@ -38,9 +41,24 @@ export default PopularNarratives;
 
 const card1 = [
   {
-    img: "https://static.highongrowth.xyz/enterprise/65017d014e5f24613adbfd67/125ffff4430441ebb904badccf01e89a.png",
-    title: "Introduction to Lens Protocol",
+    img: "https://static.highongrowth.xyz/enterprise/65017d014e5f24613adbfd67/ce207cd4fdbe49c1afc60981212ddda7.png",
+    title: "$DEGEN Meets Orbit",
     color: "bg-green-500",
+  },
+  {
+    img: "https://static.highongrowth.xyz/enterprise/65017d014e5f24613adbfd67/56d18896939849568372724f6e46a1d2.png",
+    title: "Introduction to Farcaster",
+    color: "bg-[#5038b0]",
+  },
+  {
+    img: "https://static.highongrowth.xyz/enterprise/65017d014e5f24613adbfd67/4855cfbb35f04cf6b673fa618c2e3860.png",
+    title: "Follow People on Warpcast",
+    color: "bg-[#bb5e35]",
+  },
+  {
+    img: "https://static.highongrowth.xyz/enterprise/65017d014e5f24613adbfd67/090b75a96c0b49e1b74ef9ca02d1e8a2.png",
+    title: "Explore Farcaster Dapps",
+    color: "bg-[#bb3fda]",
   },
 ];
 const cards2 = [

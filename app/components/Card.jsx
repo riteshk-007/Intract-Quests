@@ -23,6 +23,14 @@ const Card = ({ img, title, color }) => {
     return () => clearInterval(intervalId);
   }, [isHovering]);
 
+  const truncateText = (text) => {
+    const words = text.split(" ");
+    if (words.length > 2) {
+      return words.slice(0, 3.5).join(" ") + "...";
+    }
+    return text;
+  };
+
   return (
     <div
       onMouseEnter={() => setIsHovering(true)}
@@ -61,7 +69,9 @@ const Card = ({ img, title, color }) => {
         </div>
       </div>
       <div className="p-4 space-y-3">
-        <h3 className="text-white text-lg font-semibold">{title}</h3>
+        <h3 className="text-white text-lg font-semibold text-nowrap">
+          {truncateText(title)}
+        </h3>
         <hr className="border-gray-600 w-full" />
         <div
           className="flex justify-start gap-3 overflow-hidden"
