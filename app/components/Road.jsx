@@ -52,7 +52,7 @@ const Road = () => {
           onToggle={() => handleClickState("second")}
         />
       </div>
-      <div className="w-auto flex items-start justify-start absolute -bottom-10 left-0">
+      <div className="w-auto flex items-start justify-start lg:absolute -bottom-10 left-0">
         <SmallCards
           imgsrc="https://static.highongrowth.xyz/erc1155-images/65017d014e5f24613adbfd67/83bd377d91ff441aa6f7c46a63c88506.png"
           desc="Your proof of airdrop expertise"
