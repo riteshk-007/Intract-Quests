@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-const Tabs = () => {
+const Tabs = ({ setHub, hub }) => {
   const [activeTab, setActiveTab] = useState("Essentials");
 
   const handleTabChange = (tabName) => {
@@ -21,7 +21,10 @@ const Tabs = () => {
             ? "font-bold bg-gray-700/60 text-white shadow-lg backdrop-blur-md"
             : "bg-secondary"
         }`}
-        onClick={() => handleTabChange("Essentials")}
+        onClick={() => {
+          handleTabChange("Essentials");
+          setHub(!hub);
+        }}
       >
         Essentials
       </button>
@@ -31,7 +34,10 @@ const Tabs = () => {
             ? "font-bold bg-gray-700/60 text-white shadow-lg backdrop-blur-md"
             : "bg-secondary"
         }`}
-        onClick={() => handleTabChange("Alpha Hub")}
+        onClick={() => {
+          handleTabChange("Alpha Hub");
+          setHub(!hub);
+        }}
       >
         Alpha Hub
       </button>
